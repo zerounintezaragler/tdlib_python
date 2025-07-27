@@ -16,10 +16,7 @@ def ask(text: str) -> str:
             return user_input.strip()
 
 async def main():
-
-
     print("start")
-
     tdlibPythonZerounIntezarAgler = TdlibPythonZerounIntezarAgler()
     
     # tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="path_to_library/libtdlib_python.so")

@@ -2,6 +2,18 @@
 
 **Tdlib Python** sebuah library untuk membuat bot / userbot / apapun yang berhubungan dengan telegram
 
+- 🇮🇩 [Indonesia](./README.md)
+- 🇺🇸 [Inggris](./README_EN.md)
+- 🇰🇷 [Korea, Republic of South Korea](./README_KO.md)
+- 🇨🇳 [China](./README_zh-CN.md)
+- 🇿🇦 [South Africa](./README_AF.md)
+- 🇮🇳 [India](./README_HI.md)
+- 🇯🇵 [Japan](./README_JA.md)
+- 🇷🇺 [Russia](./README_RU.md)
+- 🇹🇭 [Thailand](./README_TH.md)
+- 🇦🇪 [United Arab Emirates](./README_AR.md)
+
+
 ## Fakta
 
 - Library ini tidak terikat banyak dependencies pihak 3
