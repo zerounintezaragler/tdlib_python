@@ -83,6 +83,8 @@ class EventEmitterZerounIntezarAgler:
             if listener.onUpdate:
                 # print(value)
                 listener.onUpdate(value);
+                
+    
                 # listener.onUpdate(listener, value)
 
     def on(self,

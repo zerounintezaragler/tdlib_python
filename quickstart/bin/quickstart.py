@@ -23,14 +23,14 @@ async def main():
     tdlibPythonZerounIntezarAgler = TdlibPythonZerounIntezarAgler()
     
     # tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="path_to_library/libtdlib_python.so")
-    tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="libtelegram.so")
+    tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="/home/galaxeus/Documents/github/azkadev/telegram_client/package/tdlib_library/linux/lib/libtelegram.so")
 
     tdlibPythonZerounIntezarAgler.invokeSync(parameters={
         "@type": "setLogVerbosityLevel",
         "new_verbosity_level": 0,
     })
 
-    def on_callback(update:dict):
+    async def on_callbackAsync(update:dict):
         client_id = update.get("@client_id")
         if isinstance(client_id, int):
             client_id = client_id
@@ -46,10 +46,13 @@ async def main():
             if authorization_state["@type"] == "authorizationStateWaitTdlibParameters":
                 telegramApiId = ask(text="Telegram Api Id");
                 telegramApiHash = ask(text= "Telegram Api Hash");
-                tdlibPythonZerounIntezarAgler.invoke(parameters={
+                await tdlibPythonZerounIntezarAgler.invoke(parameters={
                   "@type": "getAuthorizationState",
                   "@client_id": newTdlibClientId,
                 })
+
+    def on_callback(update:dict):
+        asyncio.run(on_callbackAsync(update=update))
  
     tdlibPythonZerounIntezarAgler.on(event_name="update", on_callback=on_callback)
 
