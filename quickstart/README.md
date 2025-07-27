@@ -1,18 +1,6 @@
 # Tdlib Python
 
-**Tdlib Python** {description}
-
-- 🇮🇩 [Indonesia](https://github.com/zerounintezaragler/tdlib_python/blob/main/README.md)
-- 🇨🇿 [Afrika](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_AFRIKA.md)
-- 🇨🇳 [China](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_CHINA.md)
-- 🏴󠁧󠁢󠁥󠁮󠁧󠁿 [English](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_ENGLISH.md)
-- 🇮🇳 [India](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_INDIA.md)
-- 🇮🇩 [Jawa](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_JAWA.md)
-- 🇯🇵 [Jepang](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_JEPANG.md)
-- 🇰🇷 [Korea](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_KOREA.md)
-- 🇷🇺 [Russia](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_RUSSIA.md)
-- 🇮🇩 [Sunda](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_SUNDA.md)
-- 🇹🇭 [Thailand](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_THAILAND.md)
+**Tdlib Python** sebuah library untuk membuat bot / userbot / apapun yang berhubungan dengan telegram
 
 ## Fakta
 
@@ -20,7 +8,7 @@
 
 ## Feature
 
-- [x] **Sangat Cepat** Library Async (**Tidak Memblokir Threads**)
+- [x] **Sangat Cepat** Library Async
 - [x] **Mudah Digunakan**
 
 ## Contoh
@@ -47,7 +35,7 @@ method wajib di panggil bebas mau setelah **on** / sebelum method **on** tapi sa
 
 **contoh:**
 
-```dart
+```python
   tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="fork/dependencies/lib/libtdlib_python.so")
 ```
 
@@ -57,7 +45,7 @@ method ini wajib di panggil setelah method **on** karena untuk mengolah update
 
 **contoh:**
 
-```dart
+```python
   await tdlibPythonZerounIntezarAgler.initialized()
 ```
 
@@ -67,7 +55,7 @@ method on ini berguna untuk mendapatkan update data dari invoke / update
 
 **contoh:**
 
-```dart
+```python
 
   def on_callback(update:dict):
     print(update)
@@ -83,7 +71,7 @@ untuk membuat client baru pastikan kamu memanggil method.
 
 **contoh:**
 
-```dart
+```python
 newClientId = tdlibPythonZerounIntezarAgler.createClient()
 print(newClientId)
 ```
@@ -114,7 +102,7 @@ jika sudah mengisi parameters wajib, kita lanjut bagaimana menginvoke api
   contoh: 
 
 
-```dart
+```python
   tdlibPythonZerounIntezarAgler.invokeSync(parameters={
     "@type": "setLogVerbosityLevel",
     "new_verbosity_level": 0,
@@ -125,7 +113,7 @@ jika sudah mengisi parameters wajib, kita lanjut bagaimana menginvoke api
   untuk mengirim pesan menggunakan library ini pastikan client sudah login
   [Referensi Dokumentasi SendMessage](url docs)
 
-```dart
+```python
 
         /// ambil from createClient atau pembaruan
         client_id = 1;
@@ -155,7 +143,6 @@ jika **kamu** masih **merasa** **kesulitan** dan **kebingungan** **cobalah berga
 
 - [Telegram](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
 
-
 **sebelum join** pastikan **memakai profile** yang **jelas** kami tidak keberatan kamu siapa, dan pangkat apapun, tapi **pastikan** **ada username dan photo profile**, dan usahakan untuk **chat di group** **tidak chat pribadi** karena itu **group umum dan mungkin orang lain kebingungan**. jika **tidak mengikuti** ini kemungkinan **tidak bisa akses chat di group dan bakal di banned**, solusi pakai akun kedua, karena setelah di banned kami tidak bisa merespond cepat
 
 
@@ -163,12 +150,9 @@ jika **kamu** masih **merasa** **kesulitan** dan **kebingungan** **cobalah berga
 
 Jika kamu merasa program ini berguna, kamu bisa support saya [GITHUB zerounintezaragler](https://github.com/zerounintezaragler) di link itu tersedia social media dan sponsor saya. saya tidak keberatan jika kamu hanya follow / donasi uang sedikit
 
-![]({gopay_qr_url})
+![](https://github.com/zerounintezaragler/zerounintezaragler/blob/main/assets/gopay.png)
 
 - https://github.com/sponsors/zerounintezaragler
-- https://www.patreon.com/c/{patreon_username}
-- https://opencollective.com/{opencollective_username}
-- https://paypal.me/{paypal_username}
 
 Terimakasih
 

@@ -8,7 +8,7 @@
 
 ## Feature
 
-- [x] **Sangat Cepat** Library Async (**Tidak Memblokir Threads**)
+- [x] **Sangat Cepat** Library Async
 - [x] **Mudah Digunakan**
 
 ## Contoh
