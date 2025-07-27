@@ -2,6 +2,18 @@
 
 **Tdlib Python** sebuah library untuk membuat bot / userbot / apapun yang berhubungan dengan telegram
 
+- 🇮🇩 [Indonesia](https://github.com/zerounintezaragler/tdlib_python/blob/main/README.md)
+- 🇺🇸 [Inggris](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_EN.md)
+- 🇰🇷 [Korea, Republic of South Korea](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_KO.md)
+- 🇨🇳 [China](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_zh-CN.md)
+- 🇿🇦 [South Africa](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_AF.md)
+- 🇮🇳 [India](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_HI.md)
+- 🇯🇵 [Japan](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_JA.md)
+- 🇷🇺 [Russia](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_RU.md)
+- 🇹🇭 [Thailand](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_TH.md)
+- 🇦🇪 [United Arab Emirates](https://github.com/zerounintezaragler/tdlib_python/blob/main/README_AR.md)
+
+
 ## Fakta
 
 - Library ini tidak terikat banyak dependencies pihak 3
