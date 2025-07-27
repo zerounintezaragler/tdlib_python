@@ -4,7 +4,7 @@
 
 ## Fakta
 
-- Library ini tidak terikat banyak depenencides pihak 3
+- Library ini tidak terikat banyak dependencies pihak 3
 
 ## Feature
 

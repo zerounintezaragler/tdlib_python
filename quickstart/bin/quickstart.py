@@ -23,7 +23,7 @@ async def main():
     tdlibPythonZerounIntezarAgler = TdlibPythonZerounIntezarAgler()
     
     # tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="path_to_library/libtdlib_python.so")
-    tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="/home/galaxeus/Documents/github/azkadev/telegram_client/package/tdlib_library/linux/lib/libtelegram.so")
+    tdlibPythonZerounIntezarAgler.ensureInitialized(libraryPath="libtelegram.so")
 
     tdlibPythonZerounIntezarAgler.invokeSync(parameters={
         "@type": "setLogVerbosityLevel",
