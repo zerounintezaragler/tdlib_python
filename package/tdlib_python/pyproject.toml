@@ -1,6 +1,6 @@
 [project]
 name = "tdlib-python"
-version = "0.0.1"
+version = "0.0.2"
 description = "tdlib_python ZerounIntezarAgler"
 authors = [{ name="zerounintezaragler" }]
 license-files = ["LICENSE"]

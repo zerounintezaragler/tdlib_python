@@ -93,7 +93,7 @@ print(newClientId)
 
 untuk memanggil api kamu perlu membaca dokumentasi langsung
 
-- [Url Docs](other_url_docs) mudah di baca untuk umum 
+- [Tdlib Docs](https://core.telegram.org/tdlib/docs/) mudah di baca untuk umum 
 
 disini saya hanya menyediakan parameters data map, map / json ini terdapat beberapa key penting
 
