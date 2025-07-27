@@ -4,6 +4,7 @@ import json
 import os
 import sys
 import asyncio
+import time
 import uuid
 from typing import Any, Callable
 
@@ -18,6 +19,7 @@ class TdlibPythonZerounIntezarAgler:
     def __init__(self):
         self._lib = None
         self._event_emitter = zeroun_intezar_agler.EventEmitterZerounIntezarAgler()
+        self._isInitialized = False
  
     def emit(self, event_name:str, value=any) -> None: 
         self._event_emitter.emit(event_name=event_name, value=value)
@@ -28,7 +30,7 @@ class TdlibPythonZerounIntezarAgler:
         return self._event_emitter.on(event_name, on_callback=callback);
         
 
-    def initializedtdlib_pythonZerounIntezarAglerNativeCallbackFunction(self) -> None:
+    def initializedTdlibNativeCallbackFunction(self) -> None:
         lib = self
 
         # Wrap dalam CFUNCTYPE + closure ke self
@@ -51,36 +53,66 @@ class TdlibPythonZerounIntezarAgler:
         
         if libraryPath == "":
             # libraryPath = os.path.abspath(os.path.join(os.path.dirname(__file__), 'lib/libtdlib_python.so'))
-            libraryPath = 'libtdlib_python.so'
+            libraryPath = 'libtelegram.so'
         # Load library
         self._lib = ctypes.CDLL(libraryPath)
  
-        self._lib.Invoketdlib_pythonZerounIntezarAglerNativeFunction.restype = ctypes.c_char_p
-        self._lib.Invoketdlib_pythonZerounIntezarAglerNativeFunction.argtypes = [ctypes.c_char_p]
-        self._callback = self.initializedtdlib_pythonZerounIntezarAglerNativeCallbackFunction()
+        self._lib.InvokeTdlibNativeFunction.restype = ctypes.c_char_p
+        self._lib.InvokeTdlibNativeFunction.argtypes = [ctypes.c_char_p]
+        self._callback = self.initializedTdlibNativeCallbackFunction()
 
-        self._lib.Initializedtdlib_pythonZerounIntezarAglerNativeCallbackFunction(self._callback)
+        self._lib.InitializedTdlibNativeCallbackFunction(self._callback)
 
-    async def initialized(self) -> None:
-        await self.invoke(parameters={
+    async def initialized(self) -> bool:
+        if self._isInitialized:
+            return
+        self._isInitialized = True
+        self.invokeRaw(parameters={
             "@type": "initialized",
         })
+        self.invokeRaw(parameters={
+            "@type": "closeClients",
+        })
+
+        time.sleep(1)
+
+        return True
 
     def invokeRaw(self, parameters: dict) -> dict:
         # Ubah dict ke string, encode ke bytes
         input_bytes = json.dumps(parameters).encode("utf-8")
         # Kirim ke C
-        result_ptr = self._lib.Invoketdlib_pythonZerounIntezarAglerNativeFunction(input_bytes)
+        result_ptr = self._lib.InvokeTdlibNativeFunction(input_bytes)
         # Ubah pointer ke string Python
         result_str = result_ptr.decode("utf-8")
         # Parse JSON
         return json.loads(result_str)
     
+    def createClient(self) -> int: 
+        result = self.invokeRaw(parameters={
+            "@type": "createClient",
+        })
+        return result["client_id"]
+
     def invokeSync(self, parameters: dict) -> dict:
         parameters["@is_sync"] = True;
         return self.invokeRaw(parameters=parameters)
     
     async def invoke(self, parameters: dict) -> dict:
+
+        client_id = parameters.get("@client_id")
+        if isinstance(client_id, int):
+            client_id = client_id
+        elif client_id is None or not isinstance(client_id, int):
+            client_id = 0
+
+
+        if client_id < 1:
+          return {
+           "@type": "error",
+           "message": "special_client_id_bad_format",
+          }
+
         get_extra = parameters.get("@extra")
         if isinstance(get_extra, str):
             get_extra = get_extra
